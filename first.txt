@@ -1,3 +1,125 @@
 Git Text.Two Text.
 Three  in  Mac.
 http://blog.csdn.net/crayondeng/article/details/20281137
+#import "NineViewController.h"
+
+@interface NineViewController ()
+{
+    #define imgWH 40
+    int kInitCount;
+    int column;
+}
+@end
+
+@implementation NineViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [self adjustImagePosWithColumns:2 add:YES];
+
+}
+
+-(void)addIma:(NSString *)imaNa x:(CGFloat)x y:(CGFloat)y
+    {
+        UIImageView *ima=[[UIImageView alloc]init];
+        ima.image=[UIImage imageNamed:imaNa];
+        ima.frame=CGRectMake(x, y, imgWH,imgWH);
+        [self.view addSubview:ima];
+        
+    }
+- (void)adjustImagePosWithColumns:(int)columns add:(BOOL)add
+{
+    CGFloat margin=(self.view.frame.size.width-columns * imgWH)/(columns+1);
+    int oneX=margin;
+    int oneY=100;
+    if (add) {
+        kInitCount=9;
+    }
+    else
+    {
+        kInitCount=(int)self.view.subviews.count - 3;
+    }
+    for (int i=0; i<kInitCount; i++) {
+        
+        int col = i%columns;
+        int row = i/columns;
+        CGFloat ix = oneX+(margin+imgWH)*col;
+        CGFloat iy = oneY+(margin+imgWH)*row;
+        NSLog(@"col--%f,row---%f",ix,iy);
+        NSLog(@"x---%f,y----%f",ix,iy);
+        if (add) {
+            if (i==(kInitCount-1)) {
+                [self addButt:ix y:iy];
+            }
+            else{
+            NSString *imgName = [NSString stringWithFormat:@"0%d.png", i];
+            [self addIma:imgName x:ix y:iy];
+            }
+        }else{
+        UIView *child = self.view.subviews[i+3];
+            NSLog(@"count----%lu",(unsigned long)self.view.subviews.count);
+            NSLog(@"%@",child);
+
+        CGRect  tempor=child.frame;
+        tempor.origin  =CGPointMake(ix, iy);
+        child.frame=tempor;
+        }
+    }
+}
+
+-(void)addButt:(CGFloat)x y:(CGFloat)y
+{
+    UIButton *but = [[UIButton alloc] initWithFrame:CGRectMake(x, y, imgWH, imgWH)];
+    UIImage *Image=[UIImage imageNamed:@"046.png"];
+    [but setImage:Image forState:UIControlStateNormal];
+    [self.view addSubview:but];
+    [but addTarget:self action:@selector(addOneImag) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void) addOneImag
+{
+    int count = (int)(self.view.subviews.count - 3);
+    UIView *child=self.view.subviews[11];
+    CGPoint poin = child.frame.origin;
+    CGFloat margin=(self.view.frame.size.width- column * imgWH)/(column+1);
+    int oneX=margin;
+    int oneY=100;
+    int col = count%column;
+    int row = count/column;
+    
+    CGFloat ix = oneX+(margin+imgWH)*col;
+    CGFloat iy = oneY+(margin+imgWH)*row;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    
+    CGRect  tempor=child.frame;
+    tempor.origin  =CGPointMake(ix, iy);
+    child.frame=tempor;
+    NSString *imgName = [NSString stringWithFormat:@"0%d.png", count];
+    [self addIma:imgName x:poin.x y:poin.y];
+    
+    [UIView commitAnimations];
+    
+}
+
+- (IBAction)segChanger:(UISegmentedControl *)sender {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    
+     column = (int)sender.selectedSegmentIndex + 2;
+    [self adjustImagePosWithColumns:column add:NO];
+    
+    [UIView commitAnimations];
+}
+@end
