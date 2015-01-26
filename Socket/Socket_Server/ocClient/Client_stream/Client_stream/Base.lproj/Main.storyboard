@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE0-av-iEn">
+                                <rect key="frame" x="283" y="130" width="34" height="30"/>
+                                <state key="normal" title="send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendData:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lVz-NB-XNX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2l-dj-2gg">
+                                <rect key="frame" x="210" y="40" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="C9v-B4-5OV"/>
+                                    <constraint firstAttribute="width" constant="180" id="WQq-eT-lnO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LV-Qb-eSC">
+                                <rect key="frame" x="277" y="220" width="47" height="30"/>
+                                <state key="normal" title="accept">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="receiveData:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MYh-8D-Zsq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eE0-av-iEn" firstAttribute="top" secondItem="u2l-dj-2gg" secondAttribute="bottom" constant="60" id="0fb-mf-D2A"/>
+                            <constraint firstItem="8LV-Qb-eSC" firstAttribute="top" secondItem="eE0-av-iEn" secondAttribute="bottom" constant="60" id="33I-V5-f3v"/>
+                            <constraint firstItem="8LV-Qb-eSC" firstAttribute="top" secondItem="u2l-dj-2gg" secondAttribute="bottom" constant="20" id="529-mt-jCW"/>
+                            <constraint firstItem="u2l-dj-2gg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="40" id="5ll-Rt-Un5"/>
+                            <constraint firstAttribute="centerX" secondItem="8LV-Qb-eSC" secondAttribute="centerX" id="6D7-OY-bl9"/>
+                            <constraint firstAttribute="centerX" secondItem="u2l-dj-2gg" secondAttribute="centerX" id="8AT-Ug-jGH"/>
+                            <constraint firstAttribute="centerY" secondItem="u2l-dj-2gg" secondAttribute="centerY" id="Bhy-rM-c0P"/>
+                            <constraint firstItem="u2l-dj-2gg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="CI3-dq-pTp"/>
+                            <constraint firstItem="u2l-dj-2gg" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="40" id="Evv-3V-PAP"/>
+                            <constraint firstItem="eE0-av-iEn" firstAttribute="top" secondItem="u2l-dj-2gg" secondAttribute="bottom" constant="60" id="GB9-xg-9eW"/>
+                            <constraint firstItem="eE0-av-iEn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="70" id="L8e-9S-Z2Z"/>
+                            <constraint firstItem="8LV-Qb-eSC" firstAttribute="top" secondItem="eE0-av-iEn" secondAttribute="bottom" constant="60" id="RxX-vd-gFp"/>
+                            <constraint firstAttribute="centerX" secondItem="eE0-av-iEn" secondAttribute="centerX" id="h6b-R5-Ynd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5ll-Rt-Un5"/>
+                                <exclude reference="Bhy-rM-c0P"/>
+                                <exclude reference="CI3-dq-pTp"/>
+                                <exclude reference="0fb-mf-D2A"/>
+                                <exclude reference="L8e-9S-Z2Z"/>
+                                <exclude reference="529-mt-jCW"/>
+                                <exclude reference="RxX-vd-gFp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="accept" destination="8LV-Qb-eSC" id="185-uJ-EIB"/>
+                        <outlet property="label" destination="u2l-dj-2gg" id="6LP-N4-TzB"/>
+                        <outlet property="send" destination="eE0-av-iEn" id="88A-pJ-8J9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215" y="51"/>
+        </scene>
+    </scenes>
+</document>

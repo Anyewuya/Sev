@@ -1,0 +1,26 @@
+getOrderListByCustomerID方法Ispaid参数 修改为 PaymentStatus -1：全部、0：未支付、1：部分支付、2:全部支付
+getOrderListByAccountID_1_7_4方法Ispaid参数 修改为 PaymentStatus -1：全部、0：未支付、1：部分支付、2:全部支付
+
+-(void)configTextField:(UITableViewCell*)cell
+{
+    UITextField *textField = ((TwoLabelCell *)cell).valueText;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(textField.frame.origin.x + 100, textField.frame.origin.y
+                                                        , textField.frame.size.width - 100, textField.frame.size.height)];
+    [textField removeFromSuperview];
+    textField.frame = CGRectMake(0, 0, textField.frame.size.width, textField.frame.size.height);
+    [view addSubview:textField];
+    view.backgroundColor = [UIColor clearColor];
+    [cell addSubview:view];
+    view.clipsToBounds = YES;
+    
+    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
+        textField.frame = CGRectMake(view.frame.size.width - textField.frame.size.width - 5, 0, textField.frame.size.width, textField.frame.size.height);
+    }  completion:^(BOOL finished) {
+
+    }];
+    NSString *str = [str mutableCopy];
+}
+
+
+
+https://dev.bizapper.com/WebService/notepad.asmx?op=addNotepad
