@@ -7,4 +7,7 @@
 转换为合法的url字符串（其实目的就是保证非法字符用UTF8编码..）
 NSString *fixedStr = [reqStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
 
+时间格式yyyy-mm-hh
+
+http://userguide.icu-project.org/formatparse/datetime
 
