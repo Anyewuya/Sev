@@ -11,3 +11,6 @@ NSString *fixedStr = [reqStr stringByAddingPercentEscapesUsingEncoding:NSUTF8Str
 
 http://userguide.icu-project.org/formatparse/datetime
 
+iOS NSCalendar NSDateComponents
+http://my.oschina.net/yongbin45/blog/156181
+
