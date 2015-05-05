@@ -1,5 +1,3 @@
 Mac&iOS socket c
 http://blog.csdn.net/cssmhyl/article/details/7920667
-checkout checkin  --file
-git branch stu
-test head
+test rebase
