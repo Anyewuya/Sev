@@ -5,6 +5,7 @@ CoreText
 http://blog.vars.me/blog/2015/05/23/CoreTextIntroduction/
 
 Git
+http://git-scm.com/book/zh/v1/
 http://segmentfault.com/a/1190000002783245
 http://segmentfault.com/a/1190000002442065
 http://segmentfault.com/a/1190000002405765
