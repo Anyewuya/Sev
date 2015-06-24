@@ -14,3 +14,8 @@ http://userguide.icu-project.org/formatparse/datetime
 iOS NSCalendar NSDateComponents
 http://my.oschina.net/yongbin45/blog/156181
 
+View Controller Containers:
+   1 The organization and traversal of view controllers in the container.
+   2 The layout of each view controller’s view.
+   3 The built-in interface element for swapping view controllers.
+
