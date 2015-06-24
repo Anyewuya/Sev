@@ -15,3 +15,9 @@ http://www.mgenware.com
 test rebase
 soft 
 test amend
+转场动画修订版: git@github.com:FangYiXiong/ViewControllerTransitionsDemo.git
+		git@github.com:objcio/issue5-view-controller-transitions.git
+
+后台网络下载:	git@github.com:mzeeshanid/MZDownloadManager.git
+
+约束:		git@github.com:SnapKit/Masonry.git
